@@ -1,7 +1,12 @@
 <h2><%= @patient.full_name %></h2>
 
+<% if notice %>
+  <div class= "alert alert-success"><%= notice %></div>
+  <% end %>
+  
 <h3>Prescriptions</h3>
 <%= link_to "New Prescription", new_patient_prescription_path(@patient) %>
+
 
 <table class="table table-bordered table-striped">
   <thead>

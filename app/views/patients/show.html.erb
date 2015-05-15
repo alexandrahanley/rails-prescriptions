@@ -3,7 +3,7 @@
 <% if notice %>
   <div class= "alert alert-success"><%= notice %></div>
   <% end %>
-  
+
 <h3>Prescriptions</h3>
 <%= link_to "New Prescription", new_patient_prescription_path(@patient) %>
 
@@ -21,8 +21,8 @@
     <% @prescriptions.each do |prescription|%>
     <tr>
       <td><%=prescription.medication.name%></td>
-      <td><%=prescription.dosage%></td>
-      <td><%=prescription.starts_on%></td>
+      <td><%=prescription.dosage + " " + prescription.schedule %></td>
+      <td><%=prescription.starts_on.strftime('%m/%d/%Y') + ' - ' + prescription.ends_on.strftime('%m/%d/%Y') %></td>
       <% end %>
     </tr>
   </tbody>
